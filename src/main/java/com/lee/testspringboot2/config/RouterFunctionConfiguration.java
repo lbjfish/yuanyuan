@@ -17,6 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 路由器函数 配置
+ *  强烈说明下webFlux并不会增加并发量，只是会增加 吞吐量
  */
 @Configuration
 public class RouterFunctionConfiguration {
