@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -40,5 +41,10 @@ public class UserController {
     @GetMapping("/person/find/{id}")
     public User findById(@PathVariable("id") int id){
         return userRepository.findById(id);
+    }
+
+    @PostMapping("/hello")
+    public Mono<String> hello(String name) {   // 【改】返回类型为Mono<String>
+        return Mono.just("Welcome to reactive world ~" + name);     // 【改】使用Mono.just生成响应式数据
     }
 }

@@ -1,8 +1,10 @@
 package com.lee.testspringboot2.po;
 
+import java.util.function.Supplier;
+
 public class User {
     private int id;
-    private String name;
+    private String name="dfdfs";
 
     public int getId() {
         return id;
@@ -27,4 +29,5 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }
