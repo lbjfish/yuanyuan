@@ -71,7 +71,7 @@ public class RouterFunctionConfiguration {
     @Bean
     public RouterFunction<ServerResponse> routersFunction(){
         RouterFunction<ServerResponse> routerFunction = RouterFunctions
-                .route(RequestPredicates.GET("/person/find/{id}"), userHandler::findById);
+                .route(RequestPredicates.GET("/person/find/{id}"), aa -> userHandler.findById(aa));
         return routerFunction;
     }
 }

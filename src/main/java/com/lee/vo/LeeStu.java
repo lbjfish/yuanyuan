@@ -1,24 +1,16 @@
 package com.lee.vo;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.Date;
 
-public class Stu {
+public class LeeStu {
     private String name;
     private int age;
     private Date date;
     private BigDecimal b;
     private Duration d;
-
-    public Stu() {
-    }
-
-    public Stu(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    private String sonName;
 
     public String getName() {
         return name;
@@ -60,15 +52,11 @@ public class Stu {
         this.d = d;
     }
 
-    @Override
-    public String toString() {
-        return "Stu{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", date=" + date +
-                ", b=" + b +
-                ", d=" + d +
-                '}';
+    public String getSonName() {
+        return sonName;
+    }
+
+    public void setSonName(String sonName) {
+        this.sonName = sonName;
     }
 }
-

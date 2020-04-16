@@ -14,7 +14,7 @@ public class TestFlux {
             System.out.println(e);
             String bb = e + "sda";
             System.out.println(bb);
-        }).subscribe(System.out::println);
+        }).doOnNext(System.out::println).subscribe(System.out::println);
         Flux.just(322).subscribe(a -> System.out.println(a));
 
         Flux.fromStream(Arrays.asList("sdsa","3343","df23").stream()).subscribe(System.out::println);

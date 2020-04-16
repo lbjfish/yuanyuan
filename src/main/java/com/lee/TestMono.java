@@ -196,8 +196,7 @@ public class TestMono {
 
 
         Flux.just("a", "b")
-                .zipWith(Flux.just("c", "d"))
-                .subscribe(System.out::println);
+                .zipWith(Flux.just("c", "d")).subscribe(System.out::println);
 
         List<String> listdd = Flux.just("a", "b")
                 .zipWith(Flux.just("c", "d"), (s1, s2) -> String.format("%s-%s", s1, s2)).collectList().block();

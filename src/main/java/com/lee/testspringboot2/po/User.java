@@ -6,6 +6,14 @@ public class User {
     private int id;
     private String name="dfdfs";
 
+    public User() {
+    }
+
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
@@ -30,4 +38,14 @@ public class User {
                 '}';
     }
 
+    public static void main(String[] args) {
+        ConcreteSubject concreteSubject = new ConcreteSubject();
+
+        concreteSubject.attach(new ConcreteObserver(concreteSubject, "X"));
+        concreteSubject.attach(new ConcreteObserver(concreteSubject, "Y"));
+        concreteSubject.attach(new ConcreteObserver(concreteSubject, "Z"));
+
+        concreteSubject.setSubjectState("ABC");
+        concreteSubject.notifyObserver();
+    }
 }
